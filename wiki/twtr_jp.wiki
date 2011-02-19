@@ -33,7 +33,7 @@ Error -2147024891 アクセスが拒否されました。
  for http://twtr.jp/
     }}}
 
-== !User-Agent!DoCoMo/1.0/ ==
+== !User-Agent!{{{DoCoMo/1.0/}}} ==
 
  * ドコモ偽装は通った。
  * i mode と認識しているが、 utf-8 で返してくるあたり、中途半端な対応の気もする。
@@ -63,7 +63,7 @@ Transfer-Encoding: chunked
 <title>ﾂｲｯﾀｰ</title>
     }}}
 
-== !User-Agent!SoftBank/2.0/ ==
+== !User-Agent!{{{SoftBank/2.0/}}} ==
 
  * ソフトバンク偽装も通った。
  * utf-8 xhtml-basic で返している。
@@ -147,7 +147,7 @@ Transfer-Encoding: chunked
 
 === ログインフォーム ===
 
- * SoftBank 偽装が無難な方法とみた。
+ * ソフトバンク偽装が無難な方法とみた。
  * 先のページから、フォームだけ取り出す。
     {{{
 <form action="http://twtr.jp/search" method="get">
