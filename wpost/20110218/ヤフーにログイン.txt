@@ -1,0 +1,127 @@
+﻿http://login.yahoo.co.jp/ のログイン
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\y
+
+ログインしているかどうか調べる
+
+!request
+!    url  !http://id.yahoo.co.jp/index.html
+
+!output
+!text!
+
+!action
+!submit!
+!run!id_yahoo_co_jp.vbs
+!if-not-empty!
+!end!
+
+ログインしていれば、ここで終わり。
+
+
+ログイン画面に入る。
+
+!request
+!    url  !https://login.yahoo.co.jp/config/login?.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+
+!action
+!submit!
+!run!login_yahoo_co_jp.vbs
+
+最後のスクリプトは、次に使うフォームパラメータを切り出している。
+
+
+ログインを実行する。
+
+!request
+!    url  !https://login.yahoo.co.jp/config/login?
+! method  !POST
+
+!data
+!.persistent!y
+!login!実際にログインするヤフーＩＤ
+!passwd!あなたのパスワード
+
+!input
+!data!
+
+これでフォームパラメータを直前のファイルから読み込む。
+hidden になっているものをこれで補う。
+
+!output
+!temp!login
+
+あとで使うかもしれないので名前をつけておく。
+
+!action
+!submit!
+!run!login_verify_yahoo_co_jp.vbs
+!if-empty!
+!end!
+
+パスワードの再確認画面でなければ、ログイン成功とみなして終了。
+
+これ以外でクッキーが使えない設定とか、
+そもそもパスワードが違うエラーは、ここでは考えない。
+
+
+パスワードの再確認に対応する。
+
+!request
+!    url  !https://login.yahoo.co.jp/config/login_verify2?
+
+!input
+!temp!login
+
+!action
+!run!login_yahoo_co_jp.vbs
+
+!output
+!temp!login2
+
+!action
+!submit!
+!clear!data
+!clear!input
+!run!login_verify_yahoo_co_jp.vbs
+!if-empty!
+!end!
+
+パスワードの再確認画面でなければ、ログイン成功とみなして終了。
+
+
+!input
+!temp!login2
+
+!action
+!run!probe.vbs
+
+とりあえず、エラーメッセージだけ出す。
+
+
+!end
+
+以上。
+
+
+
+ログイン成功したら、次のようなリフレッシュ画面が出る。
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language="JavaScript">
+<!--
+window.location.replace("http://id.yahoo.co.jp/index.html");
+// -->
+</script>
+<meta http-equiv="Refresh" content="0; url=http://id.yahoo.co.jp/index.html">
+</head>
+<body>
+<a href="http://id.yahoo.co.jp/index.html">http://id.yahoo.co.jp/index.html</a>へジャンプしようとしています。
+自動的にページが切り替わらない場合には、<a href="http://id.yahoo.co.jp/index.html">こちら</a>をクリックしてください。</body>
+</html>
