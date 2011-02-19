@@ -11,7 +11,7 @@
 
 == !User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0) ==
 
- * https://login.yahoo.co.jp/config/login?.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+ * `https://login.yahoo.co.jp/config/login?.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html`
     {{{
 <form method="post" action="https://login.yahoo.co.jp/config/login?" autocomplete="off" name="login_form">
                 <input type="hidden" name=".tries" value="1">
@@ -111,7 +111,7 @@ value="y" CHECKED> <label for="persistent">次回からIDの入力を省略</lab
     }}}
     * ♪♪♪には、実際に使用中のヤフーIDが入る。
     * ヤフー側のタイミングで勝手にこれをはさむので、このページをチェック（タイトルとか）して、こいつが出たら、再ログイン送信する、という手順が良さそう。
- * http://login.yahoo.co.jp/config/login?logout=1&.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+ * `http://login.yahoo.co.jp/config/login?logout=1&.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html`
     * ログアウト
  * `https://lh.login.yahoo.co.jp/?.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html`
     * ログイン履歴
