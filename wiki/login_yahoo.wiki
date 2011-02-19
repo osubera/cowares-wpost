@@ -13,7 +13,7 @@
 
 = ページショット =
 
-== !User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0) ==
+== !User-Agent!Mozilla/5.0 (X11; U; Linux i686; ja; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13 ==
 
  * `https://login.yahoo.co.jp/config/login?.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html`
     {{{
