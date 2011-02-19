@@ -59,7 +59,7 @@ value="y" CHECKED> <label for="persistent">次回からIDの入力を省略</lab
                     <div class="yregloginbtn"><img src="https://s.yimg.jp/i/jp/sec/lock.png" border=0 alt="SSLで保護されています" width=15 height=17><input id=".save" type="image" value="ログイン" src="https://s.yimg.jp/images/login/reg06/button/login.png" /></div>
                 </form>   
 
-    {{{
+    }}}
     * hidden の .u と .challenge を消しても、ログインできるようだ。
     * クッキーを使うので、クッキー許可を出さないとログインできない。 IE で最高セキュリティだとログインできないということ。
     * 逆にこれを使うなら、一度ログオンしておけば、クッキー許可でログイン状態、禁止でログアウト状態になる。
