@@ -231,6 +231,8 @@ Status: 200 OK
 <a href="http://twtr.jp/logout">ﾛｸﾞｱｳﾄ</a> - <a href="http://twtr.jp/home">ﾄｯﾌﾟﾍﾟｰｼﾞ</a>
     }}}
 
+== ツイート ==
+
  * `http://twtr.jp/status/create`
     * ログインできてたら、こいつでツイートフォームが出る。
     {{{
