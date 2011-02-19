@@ -113,7 +113,7 @@ value="y" CHECKED> <label for="persistent">次回からIDの入力を省略</lab
     * ヤフー側のタイミングで勝手にこれをはさむので、このページをチェック（タイトルとか）して、こいつが出たら、再ログイン送信する、という手順が良さそう。
  * http://login.yahoo.co.jp/config/login?logout=1&.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
     * ログアウト
- * https://lh.login.yahoo.co.jp/?.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+ * !https://lh.login.yahoo.co.jp/?.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
     * ログイン履歴
     * ログインしていないと表示できないので、ログイン状況の確認にうってつけ。
     
