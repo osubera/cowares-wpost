@@ -7,6 +7,10 @@
 
  * ヤフー.jp にログインする
 
+= シナリオ =
+
+ * [http://code.google.com/p/cowares-wpost/source/browse/trunk/wpost/20110218/%E3%83%A4%E3%83%95%E3%83%BC%E3%81%AB%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3.txt オリジナル配布物の ヤフーにログイン.txt]
+
 = ページショット =
 
 == !User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0) ==
