@@ -24,14 +24,14 @@
  * `http://ord.yahoo.co.jp/o/image/SIG=13dvtqmjt/EXP=1298192685;_ylt=A3JuNGysh19N7wUApsGU3uV7;_ylu=X3oDMTA2dDlwbTE2BHlqZANwYw--/*-http%3A//image.search.yahoo.co.jp/search?p=KAWAII&fr=&ktot=0&dtot=2&ei=UTF-8&pstart=1&b=141`
     * ページ制御のリンクは、このように一度別のページを経由している。しかし、それをせず、直接 search を呼んでも動く。
  * 検索結果の解析
-    * 検索件数は唯一の <h1> タグ付近にある。
+    * 検索件数は唯一の `<h1>` タグ付近にある。
       {{{
 <div id="Sf" class="cf">
 <h1 class="t">画像検索結果</h1>
 <p><em>KAWAII</em> で検索した結果<span class="bo">81～<strong id="ysrchcright">100</strong></span>件目 / 約<span class="bo">4,790,002</span>件</p>
 </div>
        }}}
-    * <h2> が検索結果にリンクするブロックの開始位置にある。これは、画像検索結果だけでなく、スポンサードリンクの開始位置にもある。
+    * `<h2>` が検索結果にリンクするブロックの開始位置にある。これは、画像検索結果だけでなく、スポンサードリンクの開始位置にもある。
       {{{
 <h2>画像</h2> <ol start="1" class="grid" id="gridlist">
     ... 画像検索結果一覧
@@ -44,7 +44,7 @@ http://ord.yahoo.co.jp/o/image/SIG=11oqm9hsa/EXP=1298192685;_ylt=A3JuNGysh19N7wU
 </h2>
     ... スポンサーリンク
       }}}
-    * 個別の検索結果は、<ol>内の <li></li> ブロックにある。
+    * 個別の検索結果は、`<ol>`内の `<li></li>` ブロックにある。
       {{{
 <li rel="gridmodule"> 
 <div class="SeR"> 
@@ -95,14 +95,14 @@ http://ord.yahoo.co.jp/o/image/SIG=132b7eq49
       }}}
     * リンク先は、直接でなくヤフー経由なので、オリジナルがリンク切れのとき、キャッシュからサムネイルを表示する。見た目には、小さいサイズの画像だったら、リンク切れという判断をすることになる。
     * オリジナルのURLは、この例だと画像サムネイルに隠されている。しかし、こいつが存在しない、キャッシュの id だけの場合もあるので、いつも使えるわけではない。
-      * img src の中身を `:` で split して、４つ目以降最後までとると、オリジナルURL。
+      * `<img src=` の中身を `:` で split して、４つ目以降最後までとると、オリジナルURL。
       {{{
 src="http://msp.c.yimg.jp/image?q=tbn:k27IFQqOTysf3M::http://gaoh.jp/wp-content/uploads/2011/01/kawaii_title.jpg"
 
 次のは、オリジナルを含まない例
 src="http://isearch.c.yimg.jp/image?id=b15a5fe7b9d154359fd4598d5169e4bc"
       }}}
-    * a タグの rev から取る方法だと、今のところ問題無さそう。
+    * `<a>` タグの `rev=` から取る方法だと、今のところ問題無さそう。
       * 最初の `/*-` から開始し、その後最初の ',' までが、オリジナル画像のURLと判断。
       {{{
  rev="http://ord.yahoo.co.jp/o/image/SIG=12e653ahk
