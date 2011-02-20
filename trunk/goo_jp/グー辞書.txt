@@ -1,0 +1,45 @@
+﻿グーの辞書を引く
+検索語を外部ファイルから取得する。
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\g
+
+!input
+!temp!keyword
+!data!
+!referer-self!
+
+以上で、
+C:\tmp\g\w_keyword_temp.txt
+から検索語を取得する設定をした。
+
+MT 引きたい単語
+
+というような書式で１行だけ書く。
+このファイルは Unicode で保存し、事前に作っておかないといけない。
+goodic.bat のように、動的に作るとよい。
+
+
+!action
+!remove!result
+
+!output
+!text!
+
+!request
+!    url  !http://dictionary.goo.ne.jp/freewordsearcher.html
+
+!data
+!mode!0
+!dict!辞書検索
+!kind!all
+
+!action
+!submit!
+!clear!input
+!run!dictionary_goo_ne_jp.vbs
+!gather!result
+
