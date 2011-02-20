@@ -1,0 +1,22 @@
+﻿http://twtr.jp/
+ログアウトする
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\t
+
+!output
+!text!
+
+!header
+!User-Agent!SoftBank/2.0/
+!Referer   !http://twtr.jp/home
+
+!request
+!    url   !http://twtr.jp/logout
+
+!action
+!submit!
+
