@@ -10,6 +10,8 @@
 
 = シナリオ =
 
+* [http://cowares-wpost.googlecode.com/svn/trunk/twtr_jp/tweet_20110220.zip tweet_20110220.zip] つぶやきパックのダウンロード
+* [http://code.google.com/p/cowares-wpost/source/browse/trunk/twtr_jp/ シナリオとスクリプトの閲覧]
 
 = ページショット =
 
