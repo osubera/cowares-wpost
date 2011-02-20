@@ -165,6 +165,7 @@ Transfer-Encoding: chunked
 </form>
     }}}
  * ２つ目にログインフォームがある。ログインを試してみよう。
+    * 非SSLだ。 SSL サーバーは用意されていないようだ。
     * authenticity_token があるので、それを再送してやらないといけない。
     {{{
 !header
