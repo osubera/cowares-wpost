@@ -15,6 +15,7 @@
 
 !request
 !    url   !http://twtr.jp/status/create
+! method   !GET
 
 !input
 !referer-self!
