@@ -40,8 +40,10 @@ Sub Main(inSt, outSt, F)
             Else
                 Value = ""
             End If
-            'outSt.WriteLine Name & " " & DecUrlString(Value)
-            outSt.WriteLine Name & " " & Value
+            If Value <> "" Then
+                'outSt.WriteLine Name & " " & DecUrlString(Value)
+                outSt.WriteLine Name & " " & Value
+            End If
         Next
         Set RegV = Nothing
     End If
