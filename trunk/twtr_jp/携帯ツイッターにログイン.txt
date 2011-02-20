@@ -1,0 +1,41 @@
+﻿http://twtr.jp/
+ログインする
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\t
+
+!output
+!text!
+
+!header
+!User-Agent!SoftBank/2.0/
+
+!request
+!    url  !http://twtr.jp/
+
+!action
+!submit!
+!run!name_form.vbs /form:login
+!if-empty!
+!end!
+
+ログインフォームが無ければ、ログイン済みなので、ここで終わり。
+この先でログイン実行。
+
+!request
+!    url  !http://twtr.jp/login
+! method  !POST
+
+!input
+!data!
+
+!data
+!login!ログイン
+!password!パスワード
+
+!action
+!submit!
+

@@ -1,0 +1,22 @@
+﻿ヤフーログイン履歴を見る
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\y
+
+!output
+!text!
+
+!request
+!    url  !https://lh.login.yahoo.co.jp/?.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+
+!action
+!submit!
+!run!lh_login_yahoo_co_jp.vbs
+
+
+成功すれば、ヤフーログイン履歴をテキストとして書き出す。
+ログインしていなければエラーになる。
+

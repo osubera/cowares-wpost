@@ -1,0 +1,2 @@
+@ECHO OFF
+tweet èIã∆Ç»Ç§

@@ -1,0 +1,57 @@
+﻿http://twtr.jp/
+つぶやく
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\t
+
+!output
+!text!
+
+!header
+!User-Agent!SoftBank/2.0/
+
+!request
+!    url   !http://twtr.jp/status/create
+
+!input
+!referer-self!
+
+
+空フォームを出して、authenticity_token を得る。
+
+!action
+!submit!
+!run!name_form.vbs /form:1
+!remove!data
+!gather!data
+
+
+あらかじめ作ったつぶやきファイルを読む。
+text つぶやき
+の書式。
+
+!input
+!temp!tweet
+
+!action
+!run!nop.vbs
+!gather!data
+!clear!input
+
+
+つぶやく。
+
+!request
+! method  !POST
+
+!input
+!referer-self!
+!temp!data
+!data!
+
+!action
+!submit!
+

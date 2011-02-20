@@ -1,0 +1,26 @@
+﻿http://login.yahoo.co.jp/ のログアウト
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\y
+
+!output
+!text!
+
+!request
+!    url  !http://login.yahoo.co.jp/config/login?logout=1&.src=www&.done=http%3A%2F%2Fid.yahoo.co.jp%2Findex.html
+
+!action
+!submit!
+
+!request
+!    url  !http://id.yahoo.co.jp/index.html
+
+!action
+!submit!
+!run!id_yahoo_co_jp.vbs
+!if-not-empty!
+!run!probe.vbs
+
