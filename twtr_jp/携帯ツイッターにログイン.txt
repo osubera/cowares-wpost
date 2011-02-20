@@ -38,4 +38,6 @@
 
 !action
 !submit!
+!clear!data
+!clear!input
 
