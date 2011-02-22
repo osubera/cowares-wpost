@@ -1,0 +1,57 @@
+﻿２ちゃんねるのdatを取ってみる。
+
+dat仕様はここを見た。
+http://info.2ch.net/wiki/index.php?monazilla%2Fdat%A4%CE%BB%C5%CD%CD
+
+
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\2
+
+!output
+!text!
+
+!header
+!User-Agent!Mozilla/1.22 (compatible; MSIE 2.0d; Windows NT)
+
+!request
+!    url  !http://hibari.2ch.net/win/dat/1030610938.dat
+!charset  !Shift_JIS
+
+!action
+!submit!
+!run!dat_2ch.vbs
+
+!end
+
+
+200 OK http://hibari.2ch.net/win/dat/1030610938.dat
+Date: Tue, 22 Feb 2011 07:17:36 GMT
+Server: Apache/2.2.15 (Unix) PHP/5.2.13 mod_ssl/2.2.15 OpenSSL/0.9.8n
+Cache-Control: max-age=5
+Vary: User-Agent,Accept-Encoding
+Last-Modified: Mon, 21 Feb 2011 17:06:04 GMT
+ETag: "5a342a-1e1dc-49ccde100d700"
+Accept-Ranges: bytes
+Content-Encoding: gzip
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/plain; charset=Shift_JIS
+
+
+名無し~3.EXE<><>02/08/29 17:48 ID:qwo3mdxj<> 冴子先生が見れるのは日本のOfficeだけ！！  <br> ry  <>☆☆　冴子先生をなすがままに！　☆☆
+
+
+名無しさん＠Ｅｍａｃｓ<>sage<>02/08/29 17:49 ID:NJMA7QvT<> わざわざこんなことでスレ立てるなよ。 <br>  <>
+名無し~3.EXE<>sage<>02/08/29 17:50 ID:A2r3u2P4<> <a href="../test/read.cgi/win/1030610938/2" target="_blank">&gt;&gt;2</a> <br> 禿同 <>
+名無し~3.EXE<><>02/08/29 17:51 ID:qwo3mdxj<> 冴子先生・・・たまらないよ、、、、　(;´Д`) ﾊｧﾊｧ <>
+名無し~3.EXE<>sage<>02/08/29 17:53 ID:GwtmhKSr<> このスレは何をどう議論すれば良いのだろうか？ <br>  <>
+名無し~3.EXE<><>02/08/29 17:54 ID:qwo3mdxj<> おまえらもマクロ組めよ！！おながいしまつ。 <>
+名無し~3.EXE<>sage<>02/08/29 18:01 ID:noKIUX9Z<> <a href="../test/read.cgi/win/1030610938/1" target="_blank">&gt;&gt;1</a> <br> http://www.geocities.co.jp/Hollywood-Cinema/6178/flash/baka.swf <>
+名無し~3.EXE<>sage<>02/08/29 18:13 ID:sknA/Qk4<> とりあえず、これを貼っておかなきゃ <br> ttp://www.akane.sakura.ne.jp/~ida2/saeko.htm <>
+名無し~3.EXE<>sage<>02/08/29 18:54 ID:qwo3mdxj<> <a href="../test/read.cgi/win/1030610938/8" target="_blank">&gt;&gt;8</a>　ﾊｧﾊｧ　ｱﾘｶﾞﾄｳ <>
+名無し~3.EXE<><>02/08/29 21:07 ID:qwo3mdxj<> age <>
+
