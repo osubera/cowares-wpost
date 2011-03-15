@@ -1,0 +1,22 @@
+﻿東電とかの計画停電、日替わりPDFをテキストにする
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\te
+
+!request
+!    url  !http://www.tepco.co.jp/cc/press/betu11_j/images/110314m.pdf
+
+!    url  !http://www.tepco.co.jp/images/chiba.pdf
+
+!output
+!temp!pdf
+
+!action
+!submit!
+!run-cmd!C:\tmp\xpdf\pdftotext.bat C:\tmp\te\w_pdf_temp.txt C:\tmp\te\w_ansi_temp.txt
+!run-cmd!type C:\tmp\te\w_ansi_temp.txt
+!run!clean_teiden_pdf.vbs
+
