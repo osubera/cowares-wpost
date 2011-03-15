@@ -1,4 +1,4 @@
-#summary 東京電力と東北電力の計画停電＠東日本地震2011
+#summary 東京電力と東北電力の計画停電＠東日本大震災2011
 #labels Phase-Design
 
 <wiki:toc max_depth="3" />
