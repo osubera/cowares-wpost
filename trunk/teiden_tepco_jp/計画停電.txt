@@ -9,6 +9,8 @@
 !request
 !    url  !http://www.tepco.co.jp/cc/press/betu11_j/images/110314m.pdf
 
+!    url  !http://i.yimg.jp/images/evt/setsuden/teiden/pdf/201103151230_tohoku_area.pdf
+
 !    url  !http://www.tepco.co.jp/images/chiba.pdf
 
 !output

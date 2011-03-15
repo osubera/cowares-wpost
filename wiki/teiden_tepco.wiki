@@ -1,11 +1,11 @@
-#summary 東京電力計画停電＠東日本地震2011
+#summary 東京電力と東北電力の計画停電＠東日本地震2011
 #labels Phase-Design
 
 <wiki:toc max_depth="3" />
 
 = 概要 =
 
- * 東電の計画停電予定表PDFをテキストで取得する。
+ * 東京電力と東北電力の計画停電予定表PDFをテキストで取得する。
  * PDFのテキスト化は、 GNU Xpdf http://www.foolabs.com/xpdf/ を使う。
 
 = Xpdf 資料 =
@@ -49,7 +49,8 @@ toUnicodeDir			japanese\CMap
  * [http://code.google.com/p/cowares-wpost/source/browse/trunk/teiden_tepco_jp/ シナリオとスクリプトの閲覧]
  * pdf ファイル名のルールがわからないので、とりあえず手で書き換えて流す方式。
     * ピンポイントで取りたいので、メインページから解析するのは却下。
- * 地域別明細は読めない。（セキュリティで蹴られるょ）
+    * 東北電力のは、発表時刻をファイル名にしてるから予測不可能だ。
+ * 東京電力の地域別明細は読めない。（セキュリティで蹴られるょ）
 
 == 計画停電.txt ==
 
