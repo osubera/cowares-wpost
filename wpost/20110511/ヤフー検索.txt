@@ -1,0 +1,133 @@
+﻿ヤフー検索
+検索語を外部ファイルから取得する。
+
+!wpost
+!
+
+!misc
+!temp-folder!C:\tmp\y
+
+!input
+!temp!keyword
+!data!
+
+以上で、
+C:\tmp\y\w_keyword_temp.txt
+から検索語を取得する設定をした。
+
+p 探したい言葉　もっと他の言葉
+
+というような書式で１行だけ書く。
+このファイルは Unicode で保存し、事前に作っておかないといけない。
+yahoo.bat のように、動的に作るとよい。
+
+
+!action
+!remove!result
+
+!output
+!text!
+
+!header
+! Referer  !http://www.yahoo.co.jp/
+!User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+
+!request
+!    url  !http://search.yahoo.co.jp/search
+
+!data
+!ei!UTF-8
+!b!1
+
+!action
+!submit!
+!clear!input
+!run!search_yahoo_co_jp.vbs /o:text
+!gather!result
+
+!data
+!b!11
+
+!action
+!submit!
+!run!search_yahoo_co_jp.vbs /o:text
+!gather!result
+
+!data
+!b!21
+
+!action
+!submit!
+!run!search_yahoo_co_jp.vbs /o:text
+!gather!result
+
+!data
+!b!31
+
+!action
+!submit!
+!run!search_yahoo_co_jp.vbs /o:text
+!gather!result
+
+!data
+!b!41
+
+!action
+!submit!
+!run!search_yahoo_co_jp.vbs /o:text
+!gather!result
+
+
+日本語ヤフー検索の結果は単純で、
+<li></li> の中に１つの検索結果が入っている。
+
+スポンサードサーチが出る場合、それも <li> を使う。
+
+◆IE 5 の場合
+◆!User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+
+しかし、検索結果は <ol>
+スポンサードは <ul>
+と、住み分けができている。
+
+
+検索結果の <li> の中身は、次のとおり。
+
+<li>
+<a href="
+http://wrs.search.yahoo.co.jp
+/_ylt=A3aX6EERuVxN7FUB3hXbZvJ7
+;_ylu=X3oDMTEyOTJhbjVkBHBvcwM1BHNlYwNzcgRzbGsDdGl0bGUEdnRpZANqcGMwMDE-
+/SIG=12naev3ee
+/EXP=1298023121
+/**
+http%3A//detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1015912985
+">
+どなたの詩なのでしょうか。 「<b>いちめんなのはな</b>」ってフレーズ゛が何 <b>...</b>
+</a>
+<div>
+2008年4月13日 <b>...</b> どなたの詩なのでしょうか。 「<b>いちめんなのはな</b>」ってフレーズ゛が何回も繰り返さ  れる詩です。 <b>...</b> 山村 暮鳥の「風景 純銀モザイク」（題名が風景で、純銀モザイク  という副題がついている）詩です。 <b>...</b> 山村 暮鳥(やまむら ぼちょう) <b>...</b>
+</div>
+<em>detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1015912985</em>
+</li>
+
+1. オリジナルURLは、唯一の a href から、 /** を頼りに取得する。
+2. <a></a> のテキストがタイトル部分
+3. <div></div> のテキストが説明部分
+4. もっと単純に、<em>以降を捨てれば、必要なテキストすべて。
+
+
+◆IE8の場合
+◆!User-Agent!Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; InfoPath.2; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C)
+
+<ol>を使わず、すべて<ul>で返す。
+スポンサードなどは <li> を使い、
+検索結果は <li class="w"> を使う。
+
+<li class="w"> の中身も変わった。
+最初の <a> の外側に <div> が入り、<em>は消えた。
+上記の 3. 4. のルールが使えない。
+
+IE8 用は切り出しルールが大きく違うので、別スクリプト対応が無難。
+ただしそこまでしなくても、 user agent 偽装で動く。
+

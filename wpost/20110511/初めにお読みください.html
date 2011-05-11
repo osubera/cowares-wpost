@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>初めにお読みください - バッチでウェブ巡回</title>
+<link rel="stylesheet" href="std.css" type="text/css" />
+<link rel="copyright" href="http://kobobau.mocvba.com/copy.html" />
+</head>
+<body>
+<div class="productid">バッチでウェブ巡回 wpost</div>
+<h1>初めにお読みください</h1>
+
+<h2 onclick="smr1(this)">このソフトにできること</h2>
+<div class="tree">
+
+<p>
+用意したシナリオでウェブページをダウンロードする。
+</p>
+
+<p>
+テキストファイルで書かれたシナリオに沿って、ウェブページやファイルをダウンロードするソフトです。
+
+ウェブ検索のトップ１００件を１つのテキストファイルにまとめたり、一括ダウンロードするといった作業を、コマンドで指示できます。
+フォーム送信にも対応しますので、投稿などに使えます。
+ログイン、閲覧や投稿、ログアウトといった一連のシナリオを用意して、全自動で実行させることができます。
+
+個別ページの解析は外部スクリプトとして切り離しているので、拡張や修正が容易。
+簡単なスクリプトを書くだけで様々なページに対応できます。 
+VBScript だけでなく、あらゆる言語で書いたスクリプトやプログラムを組み合わせて利用できます。
+
+VBScript だけで書かれているので、ほとんどのウィンドウズ環境でそのまま動きます。
+ライセンスがフリーなので、好き勝手にカスタマイズできます。
+</p>
+
+</div>
+<h2 onclick="smr1(this)">以下に同意した上でご使用ください</h2>
+<div class="tree">
+
+<div>
+<h3>
+1. 保証はありません。 (自律)
+</h3>
+<p>
+既知の欠陥も未知の欠陥も含めたまま公開されています。 
+品質や正確さはご自身で判断してください。 
+使用により生じた損失など、すべての責任はあなたが負います。
+</p>
+</div>
+
+<div>
+<h3>
+2. フリーです。 (自由)
+</h3>
+<p>
+どなたでも目的によらず無料で無期限に使えます。 
+登録や承諾は不要です。 
+商用も可です。
+自由な加工を含む再利用も再配布もできます。
+</p>
+</div>
+
+<div>
+<h3>
+3. 公正であれ。 (公正)
+</h3>
+<p>
+オリジナルが、あなたの作品と無関係に利用できることを明示する。 
+オリジナルの仕事とあなたの仕事を、正直に区別する。 
+オリジナルの著作権とライセンスを尊重する。
+</p>
+</div>
+
+<div>
+<span>
+コ・ウェア・ライセンス（自律、自由、公正）の詳細は <a href="http://cowares.nobody.jp/license/">http://cowares.nobody.jp/license/</a> で公開されています。
+</span>
+</div>
+
+</div>
+<h2 onclick="smr1(this)">動作環境</h2>
+<div class="tree">
+
+<ul>
+<li>Windows 2000 以降すべて。</li>
+<li>Windows 2000 の場合、以下のコンポーネントが無ければ、 <a href="http://www.microsoft.com/downloads/ja-jp/default.aspx">マイクロソフトのページからダウンロード</a> して追加してください。
+<ul><li>MSXML バージョン6以上</li><li>MDAC バージョン2.5以上</li></ul></li>
+</ul>
+
+</div>
+<h2 onclick="smr1(this)">配布しているファイルについて</h2>
+<div class="tree">
+
+<ol>
+<li>ZIP形式で圧縮しています。 Windows 2000 以前では、この形式を解凍できるソフトウェアが別途必要です。</li>
+<li>圧縮ファイルには以下のファイルが含まれます。
+ <table>
+ <tr><th>wpost.vbs</th><td>ソフトウェア本体。</td></tr>
+ <tr><th>他の *.vbs</th><td>付属のシナリオ見本で使うページ解析スクリプト。</td></tr>
+ <tr><th>yahoo.bat</th><td>ヤフー検索を一発で行うバッチの見本。</td></tr>
+ <tr><th>w_keyword_temp.txt</th><td>yahoo.bat が使う作業ファイルの見本。</td></tr>
+ <tr><th>テンプレ.txt</th><td>シナリオの見本。シナリオの書き方説明もある。Bing検索を行うシナリオ。</td></tr>
+ <tr><th>他の *.txt</th><td>グーグル検索、ヤフー画像検索、ヤフーログインなどのシナリオ見本。</td></tr>
+ <tr><th>ライセンス.txt</th><td>このソフトウェアのライセンスです。</td></tr>
+ <tr><th>初めにお読みください.html</th><td>この解説書です。</td></tr>
+ <tr><th>その他</th><td>解説書の使う画像ファイルなど。</td></tr>
+ </table>
+</li>
+</ol>
+
+</div>
+<h2 onclick="smr1(this)">ご使用の手引き - とりあえず使ってみる</h2>
+<div class="tree">
+
+<ol>
+<li>シナリオ見本は C:\tmp を使う前提で書いています。
+<ul>
+<li>これは変更できますが、それにはシナリオの書き方を覚えないといけません。</li>
+<li>とりあえず動かしてみるなら、 C:\tmp, C:\tmp\bing, C:\tmp\y, C:\tmp\g を作ってください。</li>
+</ul>
+</li>
+<li>解凍したファイルの <a href="テンプレ.txt">テンプレ.txt</a> を読み、何が起きるか知っておいてください。</li>
+<li>テンプレ.txt アイコンを wpost.vbs アイコンにドロップします。</li>
+<li>シナリオが開始されます。終了までしばし待ちます。</li>
+<li>終了合図のダイアログが出ます。<br/>
+<img src="shot2.png" alt="終了時のメッセージ" />
+</li>
+<li>C:\tmp\bing にできたファイルと <a href="テンプレ.txt">テンプレ.txt</a> の内容を見比べて、何が起きたか理解してください。<br/>
+<img src="shot1.png" alt="テンプレとダウンロードした画像" />
+</li>
+</ol>
+
+
+</div>
+<h2 onclick="smr1(this)">ご使用の手引き - 詳しく知りたい - wpost コマンドの実行</h2>
+<div class="tree">
+
+<ol>
+<li>wpost.vbs は、マウスでシナリオファイル（指示書）をドロップすれば、そのシナリオを実行します。</li>
+<li>コマンドラインから引数でシナリオファイルを渡して実行することもできます。</li>
+<li>複数のシナリオを受け取ることができます。</li>
+<li>コマンドラインオプションで、シナリオファイルの文字コードを指定できます。 例 /e:shift_jis</li>
+<li>文字コードを指定しないときは utf-8 として扱います。</li>
+</ol>
+
+</div>
+<h2 onclick="smr1(this)">ご使用の手引き - 詳しく知りたい - yahoo 一発検索コマンドを試す</h2>
+<div class="tree">
+
+<ol>
+<li>ファイルを解凍したフォルダで、コマンドプロンプトを開きます。</li>
+<li>yahoo エクセル　開発<br/>
+というように、 yahoo に続いて、検索したい言葉をスペース区切りで入れてエンターを押します。</li>
+<li>検索結果が画面に出ます。</li>
+<li>画面が流れて読みきれないと思いますが、 C:\tmp\y\w_result_temp.txt に保存されています。</li>
+</ol>
+
+</div>
+<h2 onclick="smr1(this)">ダウンロードしたプログラムが動かないとき</h2>
+<div class="tree">
+
+<ul>
+<li>助けを求める前に、セルフチェックで確認しましょう。</li>
+<li><a href="http://xlsm.web.fc2.com/">スクリプトが動かない人のセルフチェッカー</a></li>
+</ul>
+
+</div>
+<h2 onclick="smr1(this)">シナリオ情報</h2>
+<div class="tree">
+
+<ul>
+<li>このソフトは指示書を実行するシナリオエンジンです。</li>
+<li>各種シナリオファイルやウェブ巡回、解析の情報交換は、開発プロジェクトでなくシナリオプロジェクトで行っています。</li>
+</ul>
+
+<table>
+<tr><th>シナリオプロジェクト</th><td><a href="http://code.google.com/p/cowares-wpost/">シナリオ配布は cowares-wpost プロジェクトで行います。</a></td></tr>
+<tr><th>ウェブ自動化ブログ</th><td><a href="http://wpost.seesaa.net/">http://wpost.seesaa.net/</a></td></tr>
+</table>
+
+</div>
+<h2 onclick="smr1(this)">連絡先</h2>
+<div class="tree">
+
+<p>動作報告、不動作報告、要望などは、<a href="http://cowares.blogspot.com/search/label/baum">ブログ</a>にコメントしてください。</p>
+
+<table>
+<tr><th>作者</th><td>Tomizono (工房ばう)</td></tr>
+<tr><th>メール</th><td><a href="mailto:cowares@gmail.com">cowares@gmail.com</a></td></tr>
+<tr><th>ブログ</th><td><a href="http://cowares.blogspot.com/">http://cowares.blogspot.com</a></td></tr>
+<tr><th>ホームページ</th><td><a href="http://kobobau.mocvba.com/xls/">http://kobobau.mocvba.com/xls/</a></td></tr>
+<tr><th>ダウンロード</th><td><a href="http://www.vector.co.jp/vpack/browse/person/an030389.html">http://www.vector.co.jp</a></td></tr>
+<tr><th>オープンソース</th><td><a href="http://code.google.com/p/cowares-excel-hello/downloads/list?can=2&q=baum">オリジナルソースは cowares-excel-hello プロジェクトが配布しています。</a></td></tr>
+</table>
+
+</div>
+<div class="pr">
+<h2 onclick="smr1(this)">低価格のシステム開発</h2>
+<div class="tree">
+
+<p>エクセルブック、ワード、アクセスのカスタムメイドやウェブシステムの開発などをリーズナブルな価格で承っております。</p>
+
+<div class="shop">
+<h3>
+そのマクロ、部下が１時間残業して作ってませんか？
+</h3>
+<div class="cell">
+<h4>
+あなたの部下は時給1,000円以下ですか？
+</h4>
+<ul>
+<li>
+エクセル、アクセスのデータ、マクロが1,000円から発注できます。
+</li>
+<li>
+使用制限の無いオープンで安心なコ・ウェア・ライセンス。
+</li>
+<li>
+コ・ウェアなら、部下に命令するより安上がりです。
+</li>
+</ul>
+</div>
+</div>
+
+<div class="shop">
+<h3>
+業者との会議に10万円以上の人件費が飛んでませんか？
+</h3>
+<div class="cell">
+<h4>
+仕様の決定に過大な時間とコストをかけていませんか？
+</h4>
+<ul>
+<li>
+その費用で、たたき台となるプロトタイプを作れます。
+</li>
+<li>
+初号機に不満が無ければ、そのまま完成品として現場に投入できます。
+</li>
+<li>
+完全オープンなコードなので、続きを別の業者に発注してもよいのです。
+</li>
+<li>
+コ・ウェアなら、大きな失敗を防げます。
+</li>
+</ul>
+</div>
+</div>
+
+<div class="compact">
+
+<ul class="sectionlist">
+<li>導入する利点</li>
+<li><a href="http://cowares.nobody.jp/ja/shop/business.html">事業者で</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/enterprise.html">大企業で</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/public.html">公益法人で</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/personal.html">個人で</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/it.html">IT企業で</a></li>
+</ul>
+
+<ul class="sectionlist">
+<li>発注について</li>
+<li><a href="http://cowares.nobody.jp/ja/shop/service.html">発注から公開まで</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/price.html">料金</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/publish.html">公開（納品）</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/must.html">基本的なルール</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/may.html">細かいルール</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/why.html">なぜ無料ソフトを買う？</a></li>
+</ul>
+
+<ul class="sectionlist">
+<li><a href="http://cowares.nobody.jp/ja/shop/policy.html">プライバシー</a></li>
+<li><a href="http://cowares.nobody.jp/ja/shop/contract.html">取引上の注意</a></li>
+</ul>
+
+<div class="sectionlistr">
+<a href="http://cowares.nobody.jp/ja/shop/order.html"><img src="shop.png" alt="http://cowares.nobody.jp/ja/shop/order.html" /></a>
+</div>
+
+</div>
+<div class="compact">
+
+<ul class="sectionlist">
+<li><a href="http://cowares.nobody.jp/ja/shop/order.html">すぐに注文する</a></li>
+</ul>
+
+</div>
+
+<div class="compact">
+</div>
+
+</div>
+</div>
+
+<div class="copyright"><a href="http://kobobau.mocvba.com/copy.html">Copyright (c) 2011 Tomizono - kobobau.mocvba.com</a></div>
+
+<div class="lastupdate">2011.5.10 更新</div>
+
+<script type="text/javascript" src="vba2.js"></script>
+</body>
+</html>
