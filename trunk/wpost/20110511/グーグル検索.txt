@@ -1,0 +1,197 @@
+﻿グーグル検索
+
+!wpost
+!
+
+!header
+!User-Agent!Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+
+IE7 以降だと違うページを返すようだ。
+ここでは IE6 以前の枯れたページを前提とするため偽装する。
+
+!misc
+!temp-folder!C:\tmp\g
+
+!output
+!text!
+
+!request
+!    url  !http://www.google.co.jp
+
+!action
+!submit!
+!run!form.vbs
+
+form.vbs は、フォームを切り出すツール。
+新しいフォームに対応するとき、この情報を参考にするとよい。
+
+
+実際には、次のように検索する。
+
+!request
+!    url  !http://www.google.co.jp/search
+
+!data
+!hl!ja
+!source!hp
+!ie!UTF-8
+!btnG!Google 検索
+!q!おおお
+
+!action
+!submit!
+!run!nav_search_www_google_co_jp.vbs
+
+nav_search_www_google_co_jp.vbs は、グーグル検索結果ページから、
+次ページへのナビゲーションと、フォームを切り出す。
+何を指示しないといけないか、参考にする。
+
+
+で、２ページ目の検索は次のとおり。
+
+!data
+!sa!N
+!start!10
+
+!action
+!submit!
+!run!nav_search_www_google_co_jp.vbs
+
+
+グーグル検索は、今のところ、
+<p></p> タグを検索結果リストに使っていて、
+これだけを見ればよいという、わかりやすい結果ページを出している。
+
+ただし、
+検索語によっては、グーグルが提示する「他の関連キーワード」が、
+検索結果の下部に表示され、そいつも <p> タグに入っている。
+
+そこが不要な場合、一番手軽な識別方法は、次のとおり。
+通常の検索結果は、必ず <a タグに始まる。
+関連の方は、いきなりテキストで開始するので、先頭１文字だけのチェックで ok
+
+
+<p> の内部、１個の検索結果は次のとおり
+
+<a href="/url?q=http://www.e-town.ne.jp/kamioooka/&amp;sa=U&amp;ei=4nZcTeyJBIyjcZScndoK&amp;ved=0CCAQFjAI&amp;usg=AFQjCNF9c2haB9VpJ7XtQl661js_gbnGPg">
+横浜・上大岡 地域情報サイト&lt;&lt;&lt;かみ<b>おおお</b>かe-town&gt;&gt;&gt;
+</a>
+<table cellpadding="0" cellspacing="0" border="0"><tr><td class="j">
+<font size="-1">横浜・上大岡 地域情報サイト かみ<b>おおお</b>かe-town. HOME &middot; かみ<b>おおお</b>か &middot; かみながや <br>  &middot; こうなんだい &middot; かわさき. かみ<b>おおお</b>かe-town まちとひとが笑顔でつながる情報発信<br>  基地. メイン画像. おすすめメニュー. たっぷりミートラザニア 514円 <b>...</b><br>
+<font color="green">http://www.e-town.ne.jp/kamioooka/ - 30k</font>
+ - 
+<a href="http://webcache.googleusercontent.com/search?q=cache:vaB3iXO4FMIJ:http://www.e-town.ne.jp/kamioooka/+%E3%81%8A%E3%81%8A%E3%81%8A&amp;hl=ja&amp;ct=clnk">
+ <font color="#7777cc">キャッシュ</font>
+ </a>
+ - 
+<a href="/search?q=related:http://www.e-town.ne.jp/kamioooka/&amp;hl=ja">
+<font color="#7777cc">類似ページ</font>
+</a>
+</font>
+</td></tr></table>
+
+1. <table 以降を捨てれば、URL とタイトルだけが得られる。
+2. URL は /rul? 経由のリダイレクトになっている。
+   q= から最初の &amp; までをとればオリジナル URL
+   % が %25 にエンコードされている。
+3. 最初の <font と 次の <font の間が、説明文。
+
+これぐらいわかれば良し。
+
+
+
+まずは、ダイジェスト版を作ってみる。
+
+!action
+!clear!data
+!remove!ooo
+
+!request
+!    url  !http://www.google.co.jp/search
+
+!data
+!hl!ja
+!source!hp
+!ie!UTF-8
+!btnG!Google 検索
+!sa!N
+!q!おおお
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs /o:text
+!gather!ooo
+
+!data
+!start!10
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs /o:text
+!gather!ooo
+
+!data
+!start!20
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs /o:text
+!gather!ooo
+
+
+簡潔なプレーンテキストで結果を収集できた。
+
+
+次に、URL リストを作って、リンク先を直接収集してみる。
+
+!action
+!clear!data
+!remove!ooolist
+
+!request
+!    url  !http://www.google.co.jp/search
+
+!data
+!hl!ja
+!source!hp
+!ie!UTF-8
+!btnG!Google 検索
+!sa!N
+!q!おおお
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs
+!gather!ooolist
+
+!data
+!start!10
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs
+!gather!ooolist
+
+!data
+!start!20
+
+!action
+!submit!
+!run!search_www_google_co_jp.vbs
+!gather!ooolist
+
+!action
+!clear!data
+!clear!input
+!clear!output
+
+!input
+!temp!ooolist
+!url-list!
+
+!output
+!folder!C:\tmp\g
+
+!action
+!submit!
+
